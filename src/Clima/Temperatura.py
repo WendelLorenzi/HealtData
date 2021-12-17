@@ -73,7 +73,7 @@ class Clima:
         fig, (ax1, ax2)= plt.subplots(1, 2, figsize=(14,8))
         ax1.plot(data, temp)
         ax2.plot(dataYear, temp)
-        ax1.set(title='Temperauta x Ano | Região: %s \n Temperatura mediana: %.2f ºC' %(self.getRegiao(), reg.median()), xlabel=('Anos'), ylabel='Temperatura')
+        ax1.set(title='Temperauta x Ano | Região: %s \n Temperatura mediana: %.2f ºC' %(self.getRegiao(), reg.median()), xlabel=('Anos'), ylabel='Temperatura ºC')
         ax2.set(title='Temperauta x Ano | Região: %s' %self.getRegiao(), xlabel= 'Anos', ylabel='Temperatura')
         fig.tight_layout()
         fig.savefig('src/Graficos/Temperaturafigure.jpeg', format='jpeg')
@@ -85,6 +85,6 @@ class Clima:
         regT= (Bt + (temp * At)) #Ax + B ou B + Ax
         regU= (Bu + (umidade * Au))
         self.figTemperatura(data, temp, regT, dfyear)
-        #Umidade(data, umidade, regU, self.getRegiao())
+        Umidade(data, umidade, regU, self.getRegiao(), dfyear)
         
 
